@@ -29,9 +29,12 @@ export type Props = PageProps<{
 const IndexPage : React.FC<Props> = ({ className, data }) => {
 	return (
 		<article className={ `index-page ${ className }` }>
+			<h2 style={{ color: '#04a95f' }}>
+				Under construction ... Please, do not use this at this time ... Documentation will be ready soon.
+			</h2>
 			<h1>Welcome to <Name /> JS!</h1>
 			<NotePad>Compatible with Vue 3 and above.</NotePad>
-			<Paragraph>An intuitive reactive context based React state manager. No provider component required. Create once: use everywhere both in and out of the React component tree system.</Paragraph>
+			<Paragraph>An intuitive reactive context based vue state manager. No complex wirings required. Create once: use everywhere both in and out of the Vue component hierarchy.</Paragraph>
 			<Paragraph>Supports for framework-agnostic state sharing among applications OOB. Simply create an <Anchor to="https://auto-immutable.js.org/intro/">Auto Immutable</Anchor> instance to pass around as the <code>value</code> argument for this or any <Anchor to="https://eagleeye.js.org">Eagle Eye</Anchor> based <Anchor to="https://www.npmjs.com/package/@webkrafters/eagleeye?activeTab=readme#usage">state manager</Anchor> instances.</Paragraph>
 			<Paragraph>
 				<label>
