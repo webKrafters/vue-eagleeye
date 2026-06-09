@@ -3,9 +3,8 @@
 :root { --shborder: var( --skye ) }
 .dark { --shborder: var( --blackie ) }
 .site-heading {
-    background: var( --shbg );
-    border-bottom: 1px solid;
-    border-color: var( --shborder );
+    background: linear-gradient( var( --shborder ), var( --shborder ) ) padding-box, linear-gradient( 45deg, var( --vue-blue ), var( --vue-green ) ) border-box;
+    border-top: 0.5rem solid #0000;
     column-gap: 0.5rem;
     > * { flex: 1 1 auto }
     &, & > * {
@@ -27,20 +26,18 @@
     .sider-toggle-btn {
         background: var( --charcoal );
         border: none;
-        border-right: 2px solid var( --angular-violet );
+        border-right: 2px solid var( --vue-blue );
         color: var( --white );
         display: block;
         flex: 0 0 2rem;
         > * { font-size: 1rem }
     }
     > .branding > .logo-link {
-        background-color: var( --shbg );
+        background-color: #0000;
         display: inline-block;
-        height: auto;
+        margin-top: -0.575rem;
+        padding-left: 1rem;
         position: relative;
-        > .logo {
-            height: auto;
-        }
     }
     .branding { width: 32rem }
     .logo { width: 8rem }
@@ -59,14 +56,16 @@
             font-size: 1.45rem;
             font-weight: 800;
             padding-right: 0.5rem;
-            > a { color: var( --angular-violet ) }
+            > a {
+                color: var( --turquoise )
+            }
         }
         > :last-child {
-            border-left: 0.25rem solid var( --angular-pink );
+            border-left: 0.25rem solid var( --vue-green );
             font-weight: 300;
             padding-left: 0.5rem;
             > a {
-                color: var( --angular-pink );
+                color: var( --vue-green );
                 font-weight: 700;
             }
             @media ( max-width: 524px ) {

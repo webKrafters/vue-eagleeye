@@ -1,11 +1,9 @@
 :root {
-    --active-nav-bg: #e4ecf8;
-    --active-nav-link-color: #666;
+    --active-nav-link-color: var( --green );
     --bold-color: var( --charcoal )
 }
 .dark {
-    --active-nav-bg: #333;
-    --active-nav-link-color: var( --ash );
+    --active-nav-link-color: var( --vue-green );
     --bold-color: var( --ash )
 }
 .site-nav {
@@ -30,10 +28,9 @@
         &.indent3 { padding-left: 6rem }
         &.indent4 { padding-left: 8rem }
     }
-    a:hover { color: var( --bold-color ) }
-    a.group-link:hover { color: var( --blue ) }
+    a:hover { color: var( --active-nav-link-color ) }
+    a.group-link:hover { color: var( --active-nav-link-color ) }
     .active {
-        background-color: var( --active-nav-bg );
         font-weight: 700;
         margin: auto -0.6rem;
         padding: 0 0.6rem;

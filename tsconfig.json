@@ -107,5 +107,5 @@
     "./gatsby-config.ts",
     "./plugins/**/*",
     "gatsby-ssr.tsx"
-, "test"  ]
+  ]
 }

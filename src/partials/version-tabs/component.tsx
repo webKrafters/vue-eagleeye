@@ -12,7 +12,7 @@ import {
 	useStaticQuery
 } from 'gatsby';
 
-import SelectTab from '../select-tab';
+import SelectTab from '../../partials/select-tab';
 
 import { UpdateCtx, ValueCtx } from '../../contexts/version-of-interest';
 import { ValueCtx as BasePkgCtx } from '../../contexts/base-pkg';

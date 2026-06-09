@@ -1,7 +1,7 @@
 {
-  "alias": "ng-eagleeye.doc",
+  "alias": "vue-eagleeye.doc",
   "author": {
-    "email": "stephen.isienyi@webkrafters.tech",
+    "email": "stephen.isienyi@webkrafting.com",
     "name": "Stephen Isienyi"
   },
   "dependencies": {
@@ -21,29 +21,29 @@
     "react-dom": "^18.2.0",
     "sass": "^1.74.1"
   },
-  "description": "Angular writeable application context dev site.",
+  "description": "Vue Eagle Eye state manager dev site.",
   "devDependencies": {
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
+    "@types/sync-fetch": "^0.4.3",
     "prettier": "2.2.1",
-    "tsx": "^4.21.0",
     "typescript": "^5.3.3"
   },
   "engines": {
     "node": ">=18.0.0"
   },
-  "homepage": "https://ng-eagleeye.js.org",
+  "homepage": "https://vue-eagleeye.js.org",
   "keywords": [
-    "react js",
-    "react.js",
-    "reactive",
-    "reactjs",
+    "vue js",
+    "vue.js",
+    "vue",
+    "vuejs",
     "state"
   ],
   "license": "ISC",
   "main": "index.js",
-  "name": "eagleeye-dev",
+  "name": "vue-eagleeye-dev",
   "overrides": {
     "react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825": {
       "react": "^18.2.0",
@@ -53,7 +53,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/webKrafters/ng-eagleeye.git"
+    "url": "https://github.com/webKrafters/vue-eagleeye.git"
   },
   "scripts": {
     "build": "gatsby clean && gatsby build && node ./bundle-site",
@@ -63,9 +63,8 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "qa-start": "npm run build && gatsby serve",
     "serve": "gatsby serve",
-    "start": "gatsby develop",
-    "test": "tsx test",
+    "start": "gatsby develops",
     "typecheck": "tsc --noEmit"
   },
-  "version": "0.1.0"
+  "version": "0.0.1"
 }

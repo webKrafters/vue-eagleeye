@@ -6,7 +6,7 @@ const Component = memo(() => {
 	const { site } = useStaticQuery(
 		graphql`query projectName { site { siteMetadata { title } } }`
 	);
-	const [ name ] = useState( () => site.siteMetadata.title );
+	const [ name ] = useState(() => site.siteMetadata.title);
 	return name;
 });
 

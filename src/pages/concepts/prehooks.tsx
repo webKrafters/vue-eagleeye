@@ -4,8 +4,8 @@ import Paragraph from '../../partials/paragraph';
 import ListItem from '../../partials/list-item';
 import Name from '../../partials/name';
 
-const PREHOOKS_DECL =
-`interface Prehook<T>{
+const PREHOOKS_DECL = `
+interface Prehook<T>{
     resetState?: (
         resetData: Partial<T>, // resetData holds nextUpdate data.
         state: {
@@ -17,23 +17,6 @@ const PREHOOKS_DECL =
         newChanges: Partial<T> // newChanges holds nextUpdate data.
     ) => boolean;
 }`;
-
-const via_config =
-`provideContextService({
-    attrs: {
-        prehooks? : Prehooks<T>, // <-----
-        storage? : IStorage<T>,
-        value? : T|AutoImmutable<T>
-    }
-});`;
-
-const via_mutation =
-`class Client<T> {
-    contextService = inject( ContextService<T> );
-    updatePrehooks( prehook: Prehooks<T> ) {
-        this.contextService.prehooks = prehooks;
-    }
-};`;
 
 const ConceptPrehooksPage : React.FC<{className? : string}> = ({ className }) => (
     <article className={ `concept-prehooks-page ${ className }` }>
@@ -61,12 +44,15 @@ function BodyCurrent() {
                 <h3>How are Prehooks wired up to the <Name /> store?</h3>
                 <Paragraph style={{ margin: '0 0 5px 10px' }}>
                     <h4>Method 1: At <Name /> creation</h4>
-                    <Paragraph>Add the <code>prehooks</code> as property of the <code>provideContextSerivce(...)</code> payload</Paragraph>
-                    <pre>{ via_config }</pre>
+                    <pre style={{ margin: '10px 5px' }}>
+                        const context = createEagleEye( T|AutoImmutable{ '<' }T{ '>' }?, Prehooks{ '<' }T{ '>' }?, IStorage{ '<' }T{ '>' }? )
+                    </pre>
                 </Paragraph>
                 <Paragraph style={{ margin: '0 0 5px 10px' }}>
                     <h4>Method 2: Updating <Name /> prehooks property</h4>
-                    <pre>{ via_mutation }</pre>
+                    <pre style={{ margin: '10px 5px' }}>
+                        context.prehooks = Prehooks{ '<' }T{ '>' };
+                    </pre>
                 </Paragraph>
             </div>
         </>

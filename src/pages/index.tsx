@@ -29,9 +29,9 @@ export type Props = PageProps<{
 const IndexPage : React.FC<Props> = ({ className, data }) => {
 	return (
 		<article className={ `index-page ${ className }` }>
-			<h1>Welcome to <Name /></h1>
-			<NotePad>Compatible with Angular 17+.</NotePad>
-			<Paragraph>An intuitive reactive context based Angular state manager. Flexible. Simplified immutable application state management. Create once: use everywhere.</Paragraph>
+			<h1>Welcome to <Name /> JS!</h1>
+			<NotePad>Compatible with Vue 3 and above.</NotePad>
+			<Paragraph>An intuitive reactive context based React state manager. No provider component required. Create once: use everywhere both in and out of the React component tree system.</Paragraph>
 			<Paragraph>Supports for framework-agnostic state sharing among applications OOB. Simply create an <Anchor to="https://auto-immutable.js.org/intro/">Auto Immutable</Anchor> instance to pass around as the <code>value</code> argument for this or any <Anchor to="https://eagleeye.js.org">Eagle Eye</Anchor> based <Anchor to="https://www.npmjs.com/package/@webkrafters/eagleeye?activeTab=readme#usage">state manager</Anchor> instances.</Paragraph>
 			<Paragraph>
 				<label>
@@ -46,35 +46,17 @@ const IndexPage : React.FC<Props> = ({ className, data }) => {
 				<label>
 					<b>Main:</b>
 					<CodeBlock isInline>
-						npm install --save @webkrafters/ng-eagleeye
+						npm install --save @webkrafters/vue-eagleeye
 					</CodeBlock>
 				</label>
 			</Paragraph>
 			<Paragraph>
 				<label>
-					<b>Usage:{ ' ' }</b>
-					<Anchor style={{ fontWeight: 500 }} to="/getting-started#usage">
-						Getting Started.
-					</Anchor>
-				</label>
-			</Paragraph>
-			<Paragraph>
-				<label style={{ display: "inline-block" }}>
 					<b>Play with a demo app here on:{ ' ' }</b>
-					<Anchor style={{ fontWeight: 500 }} to={ data?.site.siteMetadata.url.demo as string }>
+					<Anchor to={ data?.site.siteMetadata.url.demo as string }>
 						Code Sandbox
 					</Anchor>
 				</label>
-				<div>
-					Should the sandbox fail to load app, please clone and run the demo repo as follows.
-					<ol>
-						<li>open your command line interface in your local machine.</li>
-						<li>run <code>git clone https://github.com/webKrafters/ng-eagleeye-app.git</code></li>
-						<li>run <code>cd ng-eagleeye-app</code></li>
-						<li>run <code>npm install &amp;&amp; npm run dev</code></li>
-						<li>open the URL displayed at then of this script run.</li>
-					</ol>
-				</div>
 			</Paragraph>
 			<Paragraph>
 				<label>
@@ -87,7 +69,7 @@ const IndexPage : React.FC<Props> = ({ className, data }) => {
 				<li>Auto-immutable update-friendly context. See <Anchor to="/concepts/store/setstate"><code>store.setState</code></Anchor>.</li>
 				<li>A context bearing an observable consumer <Anchor to="/concepts/store">store</Anchor>.</li>
 				<li>Recognizes <strong>negative array indexing</strong>. Please see <Anchor to="/concepts/property-path">Property Path</Anchor> and <code>store.setState</code> <Anchor to="/concepts/store/setstate#indexing">Indexing</Anchor>.</li>
-				<li>Only updates subscribing components (<Anchor to="/concepts/client">clients</Anchor>) on context state changes.</li>
+				<li>Only re-renders subscribing components (<Anchor to="/concepts/client">clients</Anchor>) on context state changes.</li>
 				<li>Subscribing component decides which context state properties' changes to trigger its update.</li>
 			</ul>
 			<div>May see features history at <Anchor to="/history/features">What's Changed?</Anchor></div>
@@ -112,7 +94,7 @@ export const query = graphql`
 
 export const Head : HeadFC = () => (
 	<meta
-		content="Welcome to Angular Eagle Eye!"
+		content="Welcome to React Eagle Eye!"
 		name="description"
 	/>
 );

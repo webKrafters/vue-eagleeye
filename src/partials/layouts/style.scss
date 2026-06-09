@@ -1,13 +1,15 @@
 :root {
     --ash: #ccc;
-    --blackie:#0f0f11;
+    --blackie: #222;
     --blue: #0090ff;
     --charcoal: #444;
     --gray: #888;
-    --midnight: #0f0f11;
-    --angular-pink: #e90364;
-    --angular-violet: #8001c6;
-    --skye: #fff0fa;
+    --green: #04a95f;
+    --midnight: #23272f;
+    --turquoise: #00b8cf;
+    --vue-blue: #647eff;
+    --vue-green: #28b978;
+    --skye: #f0faff;
     --white: #fff;
     --yellow: #da4;
     --background-color: var( --white );
@@ -18,10 +20,12 @@
 }
 
 .dark {
-    --background-color: var( --midnight );
+    --background-color: var( --blackie );
     --border-color: var( --charcoal );
     --background-color-mild: #272727;
     --color: var( --white );
+    --vue-blue: #6C87ff;
+    --vue-green: #21c37a;
 }
 
 body {
@@ -43,11 +47,9 @@ body {
         color: inherit;
     }
     a {
+        color: var( --green );
         text-decoration: none;
-        &:hover { opacity: 0.9 }
-        &, &:hover {
-            color: var( --angular-pink )
-        }
+        &:hover { color: var( --vue-green ) }
     }
     h1 { &, & * { font-size: 2rem } }
     h2 { &, & * { font-size: 1.78rem } }
