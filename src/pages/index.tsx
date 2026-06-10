@@ -97,7 +97,7 @@ export const query = graphql`
 
 export const Head : HeadFC = () => (
 	<meta
-		content="Welcome to React Eagle Eye!"
+		content="Welcome to Vue Eagle Eye!"
 		name="description"
 	/>
 );
