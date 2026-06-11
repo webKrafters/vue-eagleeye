@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 import CodeBlock from '../partials/code-block';
 
@@ -10,19 +10,21 @@ import Name from '../partials/name';
 import Paragraph from '../partials/paragraph';
 
 const setupCode_7_0_0 =
-`import React, { useCallback, useEffect, useRef, useState } from 'react';
-import ObservableContext from './context'; // using example from the "Getting Started Page"
-import Ui from './ui'; // using example from the "Getting Started Page"
-import StoreMonitor from './debug-monitor';
-const App = () => {
-    const [ monitor ] = useState(() => new StoreMonitor(
+`<script setup lang="ts">
+    // import { onUnmounted } from 'vue';
+    import ObservableContext from './context'; // using example from the "Getting Started Page"
+    import Ui from './ui'; // using example from the "Getting Started Page"
+    import StoreMonitor from './debug-monitor';
+    
+    const monitor = new StoreMonitor(
         d => console.log( d ),
         ObservableContext.store
     ));
-    useEffect(() => () => monitor.cleanup(), []);
-    return ( <Ui /> );
-}
-export default App;`
+    onUnmounted(() => monitor.cleanup());
+</script>
+<template>
+    <Ui />
+</template>`;
 
 const externalAccessCode =
 `class Monitor {
@@ -75,13 +77,13 @@ export default ExternalAccessPage;
 function BodyCurrent() {
     return (
         <>  
-            <Paragraph>The <Name /> instance, once created, has a store property which is accessible from any where whether within the react component tree or in a native runtime environment.</Paragraph>
+            <Paragraph>The <Name /> instance, once created, has a store property which is accessible from any where whether within the vue component tree or in a native runtime environment.</Paragraph>
             <h3>How do I access the store externally?</h3>
             <Paragraph>This is done by simply utilizing the context <code>store</code> property.</Paragraph>
             <Paragraph>For external access to the context, <strong>4</strong> store methods have been exposed. Namely:</Paragraph>
             <ol id="external-apis">
-                <li><strong><code>store.getState()</code>:</strong> Provides a static snapshot of the current state. Since v6.0.0, may accept a list of property paths to target properties within the state to fetch and return</li>
-                <li><strong><code>store.resetState()</code>:</strong> Please see descriptions in the <Anchor to="/concepts/store/resetstate">store</Anchor> page. Since v6.0.0, may accept a parameterless invocation resulting in a noop.</li>
+                <li><strong><code>store.getState()</code>:</strong> Provides a static snapshot of the current state. A list of property paths may be provided to target specific properties within the state to fetch and return</li>
+                <li><strong><code>store.resetState()</code>:</strong> Please see descriptions in the <Anchor to="/concepts/store/resetstate">store</Anchor> page. Also recognizes a parameterless invocation resulting in a noop.</li>
                 <li><strong><code>store.setState()</code>:</strong> Please see descriptions in the <Anchor to="/concepts/store/setstate">store</Anchor> page.</li>
                 <li>
                     <strong><code>store.subscribe(...)</code></strong><br />

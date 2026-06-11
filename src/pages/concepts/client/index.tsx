@@ -19,17 +19,15 @@ function BodyCurrent() {
             <h3>What is a client?</h3>
             <div>
                 <Paragraph>
-                    A client is any component consuming the <Name />. A client consumes this context by:
+                    A client is any component consuming the <Name /> context. A client consumes this context by:
                     <ul>
-                        <li>either joining the <Name />'s change stream by invoking the context's <Anchor to="/api#usecontext">useStream</Anchor> hook property</li>
-                        <li>or connecting itself to the change stream via the connector returned by the context's <Name /> <Anchor to="/api#connect">connect</Anchor> function property</li>
+                        <li>invoking the context's <Anchor to="/api#stream">stream</Anchor> function property to join the <Name />'s change stream.</li>
                     </ul>
                 </Paragraph>
                 <Paragraph>
-                    Please see examples respectively in:
+                    Please see example in: 
                     <ol>
-                        <li><Anchor to="/getting-started#usecontext-usage">Joining the <Name /> change stream { '(' }hook with memo method{ ')' }</Anchor></li>
-                        <li><Anchor to="/getting-started#connect-usage">Joining the <Name /> change stream { '(' }hoc method{ ')' }</Anchor></li>
+                        <li><Anchor to="/getting-started#streaming">Joining the <Name /> change stream.</Anchor></li>
                     </ol>
                 </Paragraph>
             </div>

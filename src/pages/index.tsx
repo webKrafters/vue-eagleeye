@@ -27,11 +27,16 @@ export type Props = PageProps<{
 }>;
 
 const IndexPage : React.FC<Props> = ({ className, data }) => {
-	return (
-		<article className={ `index-page ${ className }` }>
+	const devDisclaimer = (
+		process.env?.NODE_ENV?.toUpperCase() === 'DEVELOPMENT' && (
 			<h2 style={{ color: '#04a95f' }}>
 				Under construction ... Please, do not use this at this time ... Documentation will be ready soon.
 			</h2>
+		)
+	);
+	return (
+		<article className={ `index-page ${ className }` }>
+			{ devDisclaimer }
 			<h1>Welcome to <Name /> JS!</h1>
 			<NotePad>Compatible with Vue 3 and above.</NotePad>
 			<Paragraph>An intuitive reactive context based vue state manager. No complex wirings required. Create once: use everywhere both in and out of the Vue component hierarchy.</Paragraph>
@@ -55,11 +60,27 @@ const IndexPage : React.FC<Props> = ({ className, data }) => {
 			</Paragraph>
 			<Paragraph>
 				<label>
+					<b>Usage: </b>
+					<Anchor to="/getting-started/#usage" style={{ fontWeight: 500 }}>Getting Started.</Anchor>
+				</label>
+			</Paragraph>
+			<Paragraph>
+				<label>
 					<b>Play with a demo app here on:{ ' ' }</b>
 					<Anchor to={ data?.site.siteMetadata.url.demo as string }>
 						Code Sandbox
 					</Anchor>
 				</label>
+				<div>
+					Should the sandbox fail to load app, please clone and run the demo repo as follows.
+					<ol>
+						<li>open your command line interface in your local machine.</li>
+						<li>run <code>git clone https://github.com/webKrafters/vue-eagleeye-app.git</code></li>
+						<li>run <code>cd vue-eagleeye-app</code></li>
+						<li>run <code>npm install &amp;&amp; npm run dev</code></li>
+						<li>open the URL displayed at then of this script run.</li>
+					</ol>
+				</div>
 			</Paragraph>
 			<Paragraph>
 				<label>

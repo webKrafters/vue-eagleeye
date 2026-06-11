@@ -63,7 +63,7 @@ const ConceptStoreSetStatePage : React.FC<{className? : string}> = ({ className 
             Direct mutation attempts on its properties have no effect.
         </blockquote>
         <p>New updates are merged into state by default.</p>
-        <p>So only supply the exact changes to be merged <strong><i>{ '(' }i.e. do not spread the new state changes into the current state as is commonly done in React development{ ')' }</i></strong>.</p> 
+        <p>So only supply the exact changes to be merged <strong><i>{ '(' }i.e. do not spread the new state changes into the current state as is commonly required in most immutable libraries{ ')' }</i></strong>.</p> 
         <p>And to overwrite a slice of state, use the <Anchor to="/concepts/store/setstate/tags">tag</Anchor> command.</p>
         <WarningIcon /> <strong><i>Do this:</i></strong>
         <pre>{ `setState({ stateKey0: changes0 });` }</pre>
