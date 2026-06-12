@@ -11,9 +11,9 @@ import Paragraph from '../partials/paragraph';
 
 const setupCode_7_0_0 =
 `<script setup lang="ts">
-    // import { onUnmounted } from 'vue';
+    import { onUnmounted } from 'vue';
     import ObservableContext from './context'; // using example from the "Getting Started Page"
-    import Ui from './ui'; // using example from the "Getting Started Page"
+    import Ui from './Ui'; // using example from the "Getting Started Page"
     import StoreMonitor from './debug-monitor';
     
     const monitor = new StoreMonitor(
@@ -117,7 +117,7 @@ function BodyCurrent() {
             </ol>
             <h4>Let's see some code!</h4>
             <div className="snippet-box">
-                <Header>app.js</Header>
+                <Header>app.vue</Header>
                 <div>Sharing the store with a class.</div>
                 <CodeBlock>{ setupCode_7_0_0 }</CodeBlock>
             </div>

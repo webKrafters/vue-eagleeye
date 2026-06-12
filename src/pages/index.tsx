@@ -27,13 +27,14 @@ export type Props = PageProps<{
 }>;
 
 const IndexPage : React.FC<Props> = ({ className, data }) => {
-	const devDisclaimer = (
-		process.env?.NODE_ENV?.toUpperCase() === 'DEVELOPMENT' && (
-			<h2 style={{ color: '#04a95f' }}>
-				Under construction ... Please, do not use this at this time ... Documentation will be ready soon.
-			</h2>
-		)
-	);
+
+	let devDisclaimer = null;
+	// devDisclaimer = (
+	// 	<h2 style={{ color: '#04a95f' }}>
+	// 		Under construction ... Please, do not use this at this time ... Documentation will be ready soon.
+	// 	</h2>
+	// );
+
 	return (
 		<article className={ `index-page ${ className }` }>
 			{ devDisclaimer }

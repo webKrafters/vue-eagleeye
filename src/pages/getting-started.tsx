@@ -143,11 +143,11 @@ function BodyCurrent() {
                 To obtain a fresh context store, just call the <code>createEagleEye(...)</code> function. 
             </Paragraph>
             <Paragraph className="snippet-box">
-                <Header>context.js</Header>
+                <Header>context.ts</Header>
                 <CodeBlock>{ creatorCode_7_0_0 }</CodeBlock>
             </Paragraph>
             <Paragraph className="snippet-box">
-                <Header>container.ts</Header>
+                <Header>container.vue</Header>
                 <CodeBlock>{ containerCode }</CodeBlock>
             </Paragraph>
             <div className="snippet-intro" id="streaming">
@@ -172,7 +172,7 @@ function BodyCurrent() {
                 The <Name /> runs decoupled from its embodying application, simply providing an active place for the application to accumulate, access, update and delete its various states as needed in ways that maintains immutability and integrity of state data. The following is a contrived snippet to demonstrate.
             </Paragraph>
             <Paragraph className="snippet-box">
-                <Header>app.js</Header>
+                <Header>app.vue</Header>
                 <CodeBlock>{ setupCode_7_0_0 }</CodeBlock>
             </Paragraph>
         </>
