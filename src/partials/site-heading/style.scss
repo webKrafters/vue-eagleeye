@@ -40,7 +40,10 @@
         position: relative;
     }
     .branding { width: 32rem }
-    .logo { width: 8rem }
+    .logo {
+        height: calc( 0.15rem + var( --top-height ) );
+        width: 8rem;
+    }
     .text {
         align-items: center;
         display: flex;
